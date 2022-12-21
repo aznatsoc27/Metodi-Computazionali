@@ -1,0 +1,28 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import es1reco as rc
+
+def imm(mod,sens,time):
+    ril=rc.Hit(mod,sens,time)
+    return ril
+
+
+data0= pd.read_csv('hit_times_M0.csv')
+data1= pd.read_csv('hit_times_M1.csv')
+data2= pd.read_csv('hit_times_M2.csv')
+data3= pd.read_csv('hit_times_M3.csv')
+
+print(data0)
+
+plt.hist(data0['hit_time'], bins=65)
+plt.show()
+
+deltaT= np.diff(data0['hit_time'].values)
+mask= deltaT>0
+logdelta=np.log10(deltaT[mask])
+
+plt.hist(logdelta, bins=65, color='orange')
+plt.show()
+
+

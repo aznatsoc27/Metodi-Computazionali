@@ -1,0 +1,24 @@
+import pandas as pd
+import numpy as np
+
+
+data1= pd.read('data_sample1.csv')
+data1= pd.read('data_sample2.csv')
+data1= pd.read('data_sample3.csv')
+
+t1= np.array(data1 ['time'])
+t2= np.array(data2 ['time'])
+t3= np.array(data3 ['time'])
+
+a1= np.array(data1 ['meas'])
+a2= np.array(data2 ['meas'])
+a3= np.array(data3 ['meas'])
+
+plt.plot(t1, a1, color= 'magenta')
+plt.plot(t2, a2, color= 'blue')
+plt.plot(t3, a3, color= 'orange')
+
+plt.xlabel('t')
+plt.ylabel('f')
+
+plt.show()

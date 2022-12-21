@@ -1,0 +1,28 @@
+import sys
+import numpy as np
+import scipy 
+import matplotlib.pyplot as plt
+
+def random_walk (step, n):
+    x=np.array([0])
+    y=np.array([0])
+    unif=np.random.uniform(low=0, high=2*np.pi, size=step)
+    x1=0
+    y1=0
+    for i in unif:
+        x1=x1+n*np.cos(unif)
+        x=np.append(x, x1)
+        y1=y1+n*np.sin(unif)
+        y=np.append(y,y1)
+    return x,y
+
+passo=1
+numpassi=1000
+for j in range(6):
+    fun = random_walk(passo, numpassi)
+    plt.plot(fun)
+
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
+    

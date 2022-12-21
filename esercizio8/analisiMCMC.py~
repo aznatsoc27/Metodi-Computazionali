@@ -1,0 +1,12 @@
+import numpy as np
+from scipy.optimize import minimize
+from scipy import stats
+import matplotlib.pyplot as plt
+import emcee
+import corner
+import time
+import pandas as pd
+
+dati=pd.read_csv('absorption_line.csv')
+
+print('dati')
